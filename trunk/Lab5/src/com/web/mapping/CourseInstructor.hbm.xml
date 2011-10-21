@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.web.bean">
+	<class name="CourseInstructor" table="CourseInstructor">
+	<composite-id>
+		<key-property name="courseCode" column="coursecode"></key-property>
+		<key-property name="instructorName" column="instructorname"></key-property>
+	</composite-id>
+	<property name="seq" column="seq" />
+	<property name="main" column="main" />
+	<many-to-one name="course" class="Course" insert="false" update="false" fetch="join" lazy="false">
+		<column name="courseCode"></column>
+	</many-to-one>
+	
+	</class>
+</hibernate-mapping>
