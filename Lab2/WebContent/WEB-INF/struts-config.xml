@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="UserDetailForm" type="com.web.form.UserDetailForm">
+		</form-bean>
+		<form-bean name="UserListForm" type="com.web.form.UserListForm">
+		</form-bean>
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+		<action path="/UserDetail" type="com.web.action.UserDetailAction" scope="request" name="UserDetailForm">
+			<forward name="error" path="/userDetail.jsp" redirect="false"/>
+			<forward name="success" path="/UserList.do" redirect="false"/>
+			<forward name="edit" path="/userDetail.jsp" redirect="false"/>
+		</action>
+		<action path="/UserList" type="com.web.action.UserListAction" name="UserListForm" scope="request">
+			<forward name="success" path="/userList.jsp"></forward>
+			<forward name="del_page" path="/UserList.do?cmd=list" redirect="true"></forward>
+		</action>
+	</action-mappings>
+	<plug-in className="com.dcs.util.LoggingPlugIn">
+		<set-property property="configFilePath" value="/logger.cfg"/>
+	</plug-in>
+	<plug-in className="com.dcs.util.HibernatePlugIn">
+		<set-property property="configFilePath" value="/hibernate.cfg.xml"/>
+		<set-property property="storeInServletContext" value="true"/>
+	</plug-in>
+
+
+</struts-config>
