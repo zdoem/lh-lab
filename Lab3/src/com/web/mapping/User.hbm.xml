@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.web.bean">
+	<class name="User" table="USER">
+		<id name="userId" column="userId">
+			<generator class="assigned" />
+		</id>
+        <property name="username" column="username" />
+        <property name="firstname" column="firstName" />        
+        <property name="lastname" column="lastName" />
+        <property name="email" column="email" />
+        <property name="sex" column="sex" />
+		<property name="address" column="address" />
+		
+		<set name="telephone" table="TELEPHONE" cascade="all" fetch="subselect" lazy="false">
+			<key column="userId" update="false"></key>
+			<one-to-many class="Telephone"/>
+		</set>
+	</class>
+</hibernate-mapping>
