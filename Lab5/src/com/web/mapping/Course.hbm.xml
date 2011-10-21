@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.web.bean">
+	<class name="Course" table="Course">
+		<id name="courseCode" column="courseCode">
+			<generator class="assigned" />
+		</id>
+        <property name="courseName" column="coursename" />
+        <property name="overView" column="overview" />        
+        <property name="courseLevel" column="courselevel" />
+        <property name="duration" column="duration" />
+        <property name="target" column="target" />
+		<property name="location" column="location" />
+		<property name="clanguage" column="clanguage" />
+		<property name="fee" column="fee" />
+		<property name="payment" column="payment" />
+		<property name="remark" column="remark" />
+		<property name="updateDay" column="updatedate" />
+		
+		<list name="coursIns" table="CourseInstructor" cascade="all" fetch="subselect" lazy="false">
+			<key column="coursecode" update="false"/>
+			<index column="seq"/>
+			<one-to-many class="CourseInstructor"/>
+		</list>
+	</class>
+</hibernate-mapping>

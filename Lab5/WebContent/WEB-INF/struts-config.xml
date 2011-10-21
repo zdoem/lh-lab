@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+	<form-beans>
+		<form-bean name="CourseForm" type="com.web.form.CourseForm">
+		</form-bean>
+		<form-bean name="CourseIListForm" type="com.web.form.CourseIListForm">
+		</form-bean>
+	</form-beans>
+
+	<!-- Form Beans -->
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+	</global-forwards>
+	<action-mappings>
+		<action path="/CourseAction" type="com.web.action.CourseAction" name="CourseForm" scope="request">
+			<forward name="success" path="/CourseListAction.do">
+			</forward>
+		</action>
+		<action path="/CourseListAction" type="com.web.action.CourseListAction" scope="request" name="CourseIListForm">
+			<forward name="list" path="/courseList.jsp"/>
+			<forward name="edit" path="/course.jsp"/>
+		</action>
+	</action-mappings>
+
+	<!-- Action Mappings -->
+	
+	<!-- Logger -->
+	<plug-in className="com.dcs.util.LoggingPlugIn">
+		<set-property property="configFilePath" value="/logger.cfg"/>
+	</plug-in>
+	
+	<!-- Hibernate Mappings conf -->
+	<plug-in className="com.dcs.util.HibernatePlugIn">
+		<set-property property="configFilePath" value="/hibernate.cfg.xml"/>
+		<set-property property="storeInServletContext" value="true"/>
+	</plug-in>
+
+
+</struts-config>
