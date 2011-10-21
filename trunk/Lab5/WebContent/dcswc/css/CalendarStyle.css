@@ -1,0 +1,41 @@
+.month {
+	background-color: #d7def0;
+	font:bold 12px verdana;
+}
+
+.daysofweek {
+	background-color: #d7def0;
+	font:12px verdana;
+	text-align: center
+}
+
+.weekend {
+	background-color: #d9dadc;
+	font:12px verdana;
+	cursor: pointer
+}
+
+.weekday {
+	background-color: #f0f0f0;
+	font:12px verdana;
+	cursor: pointer	
+}
+
+.empty {
+	background-color: #f0f0f0;
+	font:12px verdana;
+}
+
+.selected {
+	background-color: #0080ff;
+	font:bold 12px verdana;
+	cursor: pointer;
+	color: silver;
+}
+
+.current {
+	background-color: #f0f0f0;	
+	font:12px verdana;
+	cursor: pointer;
+	color: #0080ff
+}
