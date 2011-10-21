@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="lab2">
+        <property name="hibernate.connection.driver_class">com.informix.jdbc.IfxDriver</property>
+        <property name="hibernate.connection.url">jdbc:informix-sqli://132.146.1.2:1530/lan:INFORMIXSERVER=</property>
+        <property name="hibernate.connection.username">bck</property>
+        <property name="hibernate.connection.password">bck</property>
+ 		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">130</property>
+		<property name="hibernate.c3p0.max_statements">107</property>
+		<property name="hibernate.c3p0.maxConnectionAge">1800</property>
+		<property name="hibernate.c3p0.maxIdleTime">900</property>
+		<property name="hibernate.c3p0.idle_test_period">300</property>
+		<property name="hibernate.c3p0.preferredTestQuery">select 1 from dual</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.InformixDialect</property>
+        <property name="hibernate.session_factory_name">SessionFactory</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>          
+        <mapping resource="/com/web/mapping/User.hbm.xml"/>
+        <mapping resource="/com/web/mapping/Telephone.hbm.xml"/>
+
+    </session-factory>    
+</hibernate-configuration>
