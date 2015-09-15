@@ -5,9 +5,9 @@
 <hibernate-configuration>
     <session-factory name="lab2">
         <property name="hibernate.connection.driver_class">com.informix.jdbc.IfxDriver</property>
-        <property name="hibernate.connection.url">jdbc:informix-sqli://132.146.1.2:1530/lan:INFORMIXSERVER=</property>
-        <property name="hibernate.connection.username">bck</property>
-        <property name="hibernate.connection.password">bck</property>
+        <property name="hibernate.connection.url">jdbc:informix-sqli://132.999.9.9:xxx/lan:INFORMIXSERVER=</property>
+        <property name="hibernate.connection.username">xxx</property>
+        <property name="hibernate.connection.password">xx</property>
  		<property name="hibernate.c3p0.min_size">5</property>
 		<property name="hibernate.c3p0.max_size">130</property>
 		<property name="hibernate.c3p0.max_statements">107</property>
